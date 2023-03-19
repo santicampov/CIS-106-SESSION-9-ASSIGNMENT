@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="santi"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-03-18 09:58:38 PM"/>
+        <attribute name="created" value="c2FudGk7TEFQVE9QLVRHU0xURkkwOzIwMjMtMDMtMTg7MDk6NDc6MDIgUE07MjkyNg=="/>
+        <attribute name="edited" value="c2FudGk7TEFQVE9QLVRHU0xURkkwOzIwMjMtMDMtMTg7MDk6NTg6MzggUE07MTszMDQ1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="nhit" type="Real" array="False" size=""/>
+            <declare name="bat" type="Real" array="False" size=""/>
+            <declare name="batavg" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter player's last name.&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;Please enter the number of hits.&quot;" newline="True"/>
+            <input variable="nhit"/>
+            <output expression="&quot;Please enter the at bats.&quot;" newline="True"/>
+            <input variable="bat"/>
+            <call expression="compbavg(nhit, bat)"/>
+            <assign variable="batavg" expression="compbavg(nhit, bat)"/>
+            <output expression="&quot;For the player: &quot; &amp;name &amp;&quot;, the bat average is: &quot; &amp;batavg" newline="True"/>
+        </body>
+    </function>
+    <function name="compbavg" type="Real" variable="batavg">
+        <parameters>
+            <parameter name="bat" type="Real" array="False"/>
+            <parameter name="nhit" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="batavg" type="Real" array="False" size=""/>
+            <assign variable="batavg" expression="bat / nhit"/>
+        </body>
+    </function>
+</flowgorithm>

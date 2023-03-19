@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="santi"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-03-18 09:46:57 PM"/>
+        <attribute name="created" value="c2FudGk7TEFQVE9QLVRHU0xURkkwOzIwMjMtMDMtMTg7MDk6Mjk6MzMgUE07MjkzMA=="/>
+        <attribute name="edited" value="c2FudGk7TEFQVE9QLVRHU0xURkkwOzIwMjMtMDMtMTg7MDk6NDY6NTcgUE07MjszMDQ0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qty" type="Real" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="total" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please enter the quantity.&quot;" newline="True"/>
+            <input variable="qty"/>
+            <output expression="&quot;Please enter the price of the item.&quot;" newline="True"/>
+            <input variable="price"/>
+            <call expression="cmptotal(qty, price)"/>
+            <assign variable="total" expression="cmptotal(qty, price)"/>
+            <output expression="&quot;For the purchase, the number of items ordered is: &quot; &amp; qty &amp;&quot;, and a price per unit of: $&quot; &amp;price &amp;&quot;; The total is:  $&quot; &amp;total" newline="True"/>
+        </body>
+    </function>
+    <function name="cmptotal" type="Real" variable="total">
+        <parameters>
+            <parameter name="price" type="Real" array="False"/>
+            <parameter name="qty" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="total" type="Real" array="False" size=""/>
+            <assign variable="total" expression="qty * price"/>
+            <if expression="total &gt; 10000">
+                <then>
+                    <assign variable="total" expression="total * 0.9"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
